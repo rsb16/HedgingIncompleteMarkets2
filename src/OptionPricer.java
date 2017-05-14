@@ -123,12 +123,14 @@ public class OptionPricer {
             double dG = ((G - phi) * INTEREST + phi * this.muCorrelated) * DT + phi * this.sigmaCorrelated * this.dzc[i];
             riskFree = G - phi;
             G += dG;
-            profitFromCorrelated += (((phi / this.correlatedPrices[i]) - (phiPrev/ this.correlatedPrices[i - 1])) * this.correlatedPrices[i]);
+            profitFromCorrelated += (((phi - phiPrev) / this.correlatedPrices[i-1]) * this.correlatedPrices[i]);
             costOfBorrowing += (riskFree * INTEREST * DT);
             phiPrev = phi;
+            //System.out.println(phi-phiPrev);
+            //
         }
         double profit = 0 - (1 * Math.max(0, this.untradedPrices[this.untradedPrices.length - 1] - STRIKE)) + profitFromCorrelated + riskFree + phiPrev - costOfBorrowing;
-        System.out.println(profit);
+        //System.out.println(profit);
         return profit;
     }
 

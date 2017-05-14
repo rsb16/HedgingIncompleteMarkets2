@@ -12,7 +12,7 @@ public class Main {
         double profitSquared = 0;
         for (int i = 0; i < n; i++) {
             OptionPricer optionPricer = new OptionPricer(args);
-            double profit = optionPricer.calculateProfitSingleHedge();
+            double profit = optionPricer.calculateProfitNoHedge();
             profitTotal += profit;
             profitSquared += profit * profit;
         }
