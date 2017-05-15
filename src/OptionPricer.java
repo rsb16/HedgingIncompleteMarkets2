@@ -28,10 +28,11 @@ public class OptionPricer {
     private static double[] NORMS;
     private static double DT;
     private static double INTEREST = 0.05;
-    private static double STRIKE = 300;
+    private static double STRIKE = 250;
     private double w;
     private double bec;
     private boolean hedge;
+    private double T;
 
     public OptionPricer(String[] args) {
         this.muCorrelated = Double.parseDouble(args[0]);
@@ -43,8 +44,8 @@ public class OptionPricer {
         this.numDays = Integer.parseInt(args[6]);
         this.hedgesPerDay = Integer.parseInt(args[7]);
         this.hedge = Boolean.parseBoolean(args[8].split("=")[1]);
-        DT = 1.0 / (this.numDays * this.hedgesPerDay);
-
+        this.T = this.numDays / 365.0;
+        DT = (this.T) / (this.numDays * this.hedgesPerDay);
         NORMS = new double[this.hedgesPerDay * this.numDays];
         try {
             makeRandomNormals();
@@ -60,14 +61,14 @@ public class OptionPricer {
     }
 
     public double calculateOptionPrice(int day) {
-        double d1 = (Math.log10(this.untradedPrices[day] / STRIKE) + (this.w + (0.5) * this.sigmaUntraded * this.sigmaUntraded) * (1 - day * DT))
-                / (this.sigmaUntraded * Math.sqrt(1 - day * DT));
-        double d2 = (Math.log10(this.untradedPrices[day] / STRIKE) + (this.w - (0.5) * this.sigmaUntraded * this.sigmaUntraded) * (1 - day * DT))
-                / (this.sigmaUntraded * Math.sqrt(1 - day * DT));
+        double d1 = (Math.log10(this.untradedPrices[day] / STRIKE) + (this.w + (0.5) * this.sigmaUntraded * this.sigmaUntraded) * (this.T - day * DT))
+                / (this.sigmaUntraded * Math.sqrt(this.T - day * DT));
+        double d2 = (Math.log10(this.untradedPrices[day] / STRIKE) + (this.w - (0.5) * this.sigmaUntraded * this.sigmaUntraded) * (this.T - day * DT))
+                / (this.sigmaUntraded * Math.sqrt(this.T - day * DT));
         NormalDistribution distribution = new NormalDistribution(0, 1);
-        double V = this.startPriceUntraded * Math.exp((w - INTEREST) * (1 - day * DT)) * distribution.cumulativeProbability(d1)
-                - STRIKE * Math.exp(-1 * INTEREST * (1 - day * DT)) * distribution.cumulativeProbability(d2);
-        //System.out.println("V: " + V);
+        double V = this.startPriceUntraded * Math.exp((w - INTEREST) * (this.T - day * DT)) * distribution.cumulativeProbability(d1)
+                - STRIKE * Math.exp(-1 * INTEREST * (this.T - day * DT)) * distribution.cumulativeProbability(d2);
+        System.out.println("V : " + V);
         return V;
     }
 
@@ -90,15 +91,13 @@ public class OptionPricer {
         //We take (G - phi) and invest it in the risk free.
         //We take phi and invest it in the correlated asset at time t = 0.
         //We calculate the final profit.
-        double d1 = (Math.log10(this.untradedPrices[0] / STRIKE) + (this.w + (0.5) * this.sigmaUntraded * this.sigmaUntraded) * (1 - 0 * DT))
-                / (this.sigmaUntraded * Math.sqrt(1 - 0 * DT));
+        double d1 = (Math.log10(this.untradedPrices[0] / STRIKE) + (this.w + (0.5) * this.sigmaUntraded * this.sigmaUntraded) * (this.T - 0 * DT))
+                / (this.sigmaUntraded * Math.sqrt(this.T - 0 * DT));
         NormalDistribution norm = new NormalDistribution(0, 1);
-        double phi = this.startPriceUntraded * Math.exp((this.w - INTEREST) * (1 - 0 * DT)) * norm.cumulativeProbability(d1) * this.bec;
+        double phi = this.startPriceUntraded * Math.exp((this.w - INTEREST) * (this.T - 0 * DT)) * norm.cumulativeProbability(d1) * this.bec;
         double G = this.calculateOptionPrice(0);
         double riskFree = G - phi;
         double moneyFromCorrelated = (phi / this.correlatedPrices[0]) * this.correlatedPrices[this.correlatedPrices.length - 1];
-        double costOfBorrowing = riskFree * INTEREST * (numDays / 365.0);
-        System.out.println(-1 * Math.max(0, this.untradedPrices[this.untradedPrices.length - 1] - STRIKE) + moneyFromCorrelated + riskFree * Math.exp(INTEREST * (numDays / 365.0)));
         return -1 * Math.max(0, this.untradedPrices[this.untradedPrices.length - 1] - STRIKE) + moneyFromCorrelated + riskFree * Math.exp(INTEREST * (numDays / 365.0));
     }
 
@@ -110,28 +109,38 @@ public class OptionPricer {
         double costOfBorrowing = 0;
         double G = this.calculateOptionPrice(0);
         NormalDistribution norm = new NormalDistribution(0, 1);
-        double d1 = (Math.log10(this.untradedPrices[0] / STRIKE) + (this.w + (0.5) * this.sigmaUntraded * this.sigmaUntraded) * (1 - 0 * DT))
-                / (this.sigmaUntraded * Math.sqrt(1 - 0 * DT));
-        double phiPrev = this.startPriceUntraded * Math.exp((this.w - INTEREST) * (1 - 0 * DT)) * norm.cumulativeProbability(d1) * this.bec;
+        double d1 = (Math.log(this.untradedPrices[0] / STRIKE) + (this.w + (0.5) * this.sigmaUntraded * this.sigmaUntraded) * (this.T - 0 * DT))
+                / (this.sigmaUntraded * Math.sqrt(this.T - 0 * DT));
+        double phiPrev = this.startPriceUntraded * Math.exp((this.w - INTEREST) * (this.T - 0 * DT)) * norm.cumulativeProbability(d1) * this.bec;
         double riskFree = 0;
         for (int i = 1; i < this.hedgesPerDay * this.numDays; i++) {
             //Get the ith d1.
-            d1 = (Math.log10(this.untradedPrices[i] / STRIKE) + (this.w + (0.5) * this.sigmaUntraded * this.sigmaUntraded) * (1 - i * DT))
-                    / (this.sigmaUntraded * Math.sqrt(1 - i * DT));
+            d1 = (Math.log(this.untradedPrices[i] / STRIKE) + (this.w + (0.5) * this.sigmaUntraded * this.sigmaUntraded) * (this.T - i * DT))
+                    / (this.sigmaUntraded * Math.sqrt(this.T - i * DT));
             //Get the ith phi.
-            double phi = this.untradedPrices[i] * Math.exp((this.w - INTEREST) * (1 - i * DT)) * norm.cumulativeProbability(d1) * this.bec;
+            double phi = this.untradedPrices[i] * Math.exp((this.w - INTEREST) * (this.T - i * DT)) * norm.cumulativeProbability(d1) * this.bec;
             double dG = ((G - phi) * INTEREST + phi * this.muCorrelated) * DT + phi * this.sigmaCorrelated * this.dzc[i];
             riskFree = G - phi;
             G += dG;
-            profitFromCorrelated += (((phi - phiPrev) / this.correlatedPrices[i-1]) * this.correlatedPrices[i]);
+            profitFromCorrelated += (((phiPrev / this.correlatedPrices[i - 1]) * this.correlatedPrices[i]) - phiPrev);
+            //System.out.println("phi: " + phi);
+            //System.out.println("Corr[" + i + "]: " + this.correlatedPrices[i]);
+            //System.out.println("phiPrev: " + phiPrev);
+            //System.out.println("Corr[" + (i - 1) + "]: " + this.correlatedPrices[i - 1]);
+            //System.out.println("Prof: " + (((phiPrev / this.correlatedPrices[i - 1]) * this.correlatedPrices[i]) - phiPrev));
+            //System.out.println();
             costOfBorrowing += (riskFree * INTEREST * DT);
             phiPrev = phi;
         }
         System.out.println("payout: " + -Math.max(0, this.untradedPrices[this.untradedPrices.length - 1] - STRIKE));
-        System.out.println("profCorr: " + profitFromCorrelated);
-        System.out.println("riskFree: " + riskFree * Math.exp(INTEREST));
+        System.out.println("Xe: " + this.untradedPrices[this.untradedPrices.length - 1]);
+        System.out.println("Xc: " + this.correlatedPrices[this.correlatedPrices.length - 1]);
+        System.out.println("riskFree: " + riskFree);
         System.out.println("phiPrev: " + phiPrev);
-        double profit = - (1 * Math.max(0, this.untradedPrices[this.untradedPrices.length - 1] - STRIKE)) + riskFree * Math.exp(INTEREST) + phiPrev;
+        System.out.println("G: " + G);
+        System.out.println("prof: " + profitFromCorrelated);
+        System.out.println("Cost: " + costOfBorrowing);
+        double profit = - (1 * Math.max(0, this.untradedPrices[this.untradedPrices.length - 1] - STRIKE)) + profitFromCorrelated + calculateOptionPrice(0) + costOfBorrowing;
         System.out.println(profit);
         System.out.println();
         return profit;
@@ -171,7 +180,7 @@ public class OptionPricer {
         for (int i = 1; i < this.untradedPrices.length; i++) {
             this.untradedPrices[i] = this.untradedPrices[i - 1] *
                     Math.exp(
-                            (this.muUntraded - 0.5 * this.sigmaUntraded * this.sigmaUntraded) * DT
+                            (this.muUntraded - 0.5 * this.sigmaUntraded * this.sigmaUntraded) * (DT)
                                     + this.sigmaUntraded * Math.sqrt(DT) * NORMS[i-1]
                     );
         }
@@ -183,7 +192,7 @@ public class OptionPricer {
         for (int i = 1; i < this.correlatedPrices.length; i++) {
             this.correlatedPrices[i] = this.correlatedPrices[i - 1] *
                     Math.exp(
-                            (this.muCorrelated - 0.5 * this.sigmaCorrelated * this.sigmaCorrelated) * DT
+                            (this.muCorrelated - 0.5 * this.sigmaCorrelated * this.sigmaCorrelated) * (DT)
                                     + this.sigmaCorrelated * Math.sqrt(DT) * NORMS[i-1]
                     );
         }
