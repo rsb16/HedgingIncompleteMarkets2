@@ -2,10 +2,7 @@ import org.apache.commons.math3.distribution.NormalDistribution;
 import org.apache.commons.math3.stat.StatUtils;
 import org.apache.commons.math3.stat.correlation.Covariance;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.util.Random;
 
 /**
@@ -25,10 +22,12 @@ public class OptionPricer {
     private double[] correlatedPrices;
     private double[] dzc;
     private double[] dze;
-    private static double[] NORMS;
+    private static double[] NORMS1;
+    private static double[] NORMS2;
     private static double DT;
     private static double INTEREST = 0.05;
-    private static double STRIKE = 250;
+    private static double STRIKE = 400;
+    private static double RHO = 1;
     private double w;
     private double bec;
     private boolean hedge;
@@ -46,10 +45,10 @@ public class OptionPricer {
         this.hedge = Boolean.parseBoolean(args[8].split("=")[1]);
         this.T = this.numDays / 365.0;
         DT = (this.T) / (this.numDays * this.hedgesPerDay);
-        NORMS = new double[this.hedgesPerDay * this.numDays];
+        NORMS1 = new double[this.hedgesPerDay * this.numDays];
+        NORMS2 = new double[this.hedgesPerDay * this.numDays];
         try {
             makeRandomNormals();
-            setRandoms();
         } catch (Exception e) {
 
         }
@@ -57,18 +56,17 @@ public class OptionPricer {
         setCorrelatedPrices();
         this.bec = bec();
         this.w = this.muUntraded - this.bec*(this.muCorrelated - INTEREST);
-        //printPrices();
+        printPrices();
     }
 
     public double calculateOptionPrice(int day) {
-        double d1 = (Math.log10(this.untradedPrices[day] / STRIKE) + (this.w + (0.5) * this.sigmaUntraded * this.sigmaUntraded) * (this.T - day * DT))
+        double d1 = (Math.log(this.untradedPrices[day] / STRIKE) + (this.w + (0.5) * this.sigmaUntraded * this.sigmaUntraded) * (this.T - day * DT))
                 / (this.sigmaUntraded * Math.sqrt(this.T - day * DT));
-        double d2 = (Math.log10(this.untradedPrices[day] / STRIKE) + (this.w - (0.5) * this.sigmaUntraded * this.sigmaUntraded) * (this.T - day * DT))
+        double d2 = (Math.log(this.untradedPrices[day] / STRIKE) + (this.w - (0.5) * this.sigmaUntraded * this.sigmaUntraded) * (this.T - day * DT))
                 / (this.sigmaUntraded * Math.sqrt(this.T - day * DT));
         NormalDistribution distribution = new NormalDistribution(0, 1);
         double V = this.startPriceUntraded * Math.exp((w - INTEREST) * (this.T - day * DT)) * distribution.cumulativeProbability(d1)
                 - STRIKE * Math.exp(-1 * INTEREST * (this.T - day * DT)) * distribution.cumulativeProbability(d2);
-        System.out.println("V : " + V);
         return V;
     }
 
@@ -91,7 +89,7 @@ public class OptionPricer {
         //We take (G - phi) and invest it in the risk free.
         //We take phi and invest it in the correlated asset at time t = 0.
         //We calculate the final profit.
-        double d1 = (Math.log10(this.untradedPrices[0] / STRIKE) + (this.w + (0.5) * this.sigmaUntraded * this.sigmaUntraded) * (this.T - 0 * DT))
+        double d1 = (Math.log(this.untradedPrices[0] / STRIKE) + (this.w + (0.5) * this.sigmaUntraded * this.sigmaUntraded) * (this.T - 0 * DT))
                 / (this.sigmaUntraded * Math.sqrt(this.T - 0 * DT));
         NormalDistribution norm = new NormalDistribution(0, 1);
         double phi = this.startPriceUntraded * Math.exp((this.w - INTEREST) * (this.T - 0 * DT)) * norm.cumulativeProbability(d1) * this.bec;
@@ -132,47 +130,28 @@ public class OptionPricer {
             costOfBorrowing += (riskFree * INTEREST * DT);
             phiPrev = phi;
         }
-        System.out.println("payout: " + -Math.max(0, this.untradedPrices[this.untradedPrices.length - 1] - STRIKE));
-        System.out.println("Xe: " + this.untradedPrices[this.untradedPrices.length - 1]);
-        System.out.println("Xc: " + this.correlatedPrices[this.correlatedPrices.length - 1]);
-        System.out.println("riskFree: " + riskFree);
-        System.out.println("phiPrev: " + phiPrev);
-        System.out.println("G: " + G);
-        System.out.println("prof: " + profitFromCorrelated);
-        System.out.println("Cost: " + costOfBorrowing);
+//        System.out.println("payout: " + -Math.max(0, this.untradedPrices[this.untradedPrices.length - 1] - STRIKE));
+//        System.out.println("Xe: " + this.untradedPrices[this.untradedPrices.length - 1]);
+//        System.out.println("Xc: " + this.correlatedPrices[this.correlatedPrices.length - 1]);
+//        System.out.println("riskFree: " + riskFree);
+//        System.out.println("phiPrev: " + phiPrev);
+//        System.out.println("G: " + G);
+//        System.out.println("prof: " + profitFromCorrelated);
+//        System.out.println("Cost: " + costOfBorrowing);
         double profit = - (1 * Math.max(0, this.untradedPrices[this.untradedPrices.length - 1] - STRIKE)) + profitFromCorrelated + calculateOptionPrice(0) + costOfBorrowing;
-        System.out.println(profit);
-        System.out.println();
+//        System.out.println(profit);
+//        System.out.println();
         return profit;
     }
 
     private void makeRandomNormals() {
         Random random = new Random();
-        try{
-            PrintWriter writer = new PrintWriter("randoms.txt", "UTF-8");
             for (int i = 0; i < this.numDays * this.numDays; i ++) {
-                writer.println(random.nextGaussian());
+                NORMS1[i] = random.nextGaussian();
+                NORMS2[i] = RHO * NORMS1[i] + Math.sqrt(1 - RHO) * random.nextGaussian();
             }
-            writer.close();
-        } catch (IOException e) {
-            // do something
-        }
     }
 
-    private void setRandoms() throws Exception {
-        BufferedReader br = new BufferedReader(new FileReader("/Users/Dan/IdeaProjects/TestingLuenberger2/randoms.txt"));
-        try {
-            StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < this.numDays * this.hedgesPerDay; i++) {
-                String line = br.readLine();
-                NORMS[i] = Double.parseDouble(line);
-            }
-
-        }
-        finally {
-            br.close();
-        }
-    }
 
     private void setUntradedPrices() {
         this.untradedPrices = new double[this.numDays * this.hedgesPerDay];
@@ -181,7 +160,7 @@ public class OptionPricer {
             this.untradedPrices[i] = this.untradedPrices[i - 1] *
                     Math.exp(
                             (this.muUntraded - 0.5 * this.sigmaUntraded * this.sigmaUntraded) * (DT)
-                                    + this.sigmaUntraded * Math.sqrt(DT) * NORMS[i-1]
+                                    + this.sigmaUntraded * Math.sqrt(DT) * NORMS1[i-1]
                     );
         }
     }
@@ -193,16 +172,24 @@ public class OptionPricer {
             this.correlatedPrices[i] = this.correlatedPrices[i - 1] *
                     Math.exp(
                             (this.muCorrelated - 0.5 * this.sigmaCorrelated * this.sigmaCorrelated) * (DT)
-                                    + this.sigmaCorrelated * Math.sqrt(DT) * NORMS[i-1]
+                                    + this.sigmaCorrelated * Math.sqrt(DT) * NORMS2[i-1]
                     );
         }
     }
 
     public void printPrices() {
-        for (int i = 0; i < this.numDays * this.hedgesPerDay; i++) {
-            System.out.println("Xe(" + i + ")" + " = " + this.untradedPrices[i]);
-            System.out.println("Xc(" + i + ")" + " = " + this.correlatedPrices[i]);
+        try {
+            PrintWriter writer = new PrintWriter("prices.txt", "UTF-8");
+            for (int i = 0; i < this.numDays * this.hedgesPerDay; i++) {
+                writer.print(i + " ");
+                writer.print(this.untradedPrices[i] + " ");
+                writer.println(this.correlatedPrices[i]);
+            }
+            writer.close();
+        } catch (Exception e) {
+            System.out.println("Error writing to file.");
         }
+
     }
 
     public double bec() {
