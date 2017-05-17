@@ -1,0 +1,57 @@
+{
+  "origin" : "LON",
+  "currency" : "GBP",
+  "results" : [ {
+    "destination" : "NYC",
+    "departure_date" : "2017-07-10",
+    "price" : "418.80",
+    "airline" : "DY"
+  } ]
+}
+{
+  "origin" : "LON",
+  "currency" : "GBP",
+  "results" : [ {
+    "destination" : "AMS",
+    "departure_date" : "2017-07-10",
+    "price" : "48.26",
+    "airline" : "VY"
+  } ]
+}
+{
+  "origin" : "LON",
+  "currency" : "GBP",
+  "results" : [ {
+    "destination" : "IST",
+    "departure_date" : "2017-07-10",
+    "price" : "115.02",
+    "airline" : "PC"
+  } ]
+}{
+  "origin" : "LON",
+  "currency" : "GBP",
+  "results" : [ {
+    "destination" : "IST",
+    "departure_date" : "2017-11-10",
+    "price" : "52.92",
+    "airline" : "PC"
+  } ]
+}{
+  "origin" : "LON",
+  "currency" : "GBP",
+  "results" : [ {
+    "destination" : "PAR",
+    "departure_date" : "2017-07-10",
+    "price" : "44.00",
+    "airline" : "9F"
+  } ]
+}{
+  "origin" : "LON",
+  "currency" : "GBP",
+  "results" : [ {
+    "destination" : "PAR",
+    "departure_date" : "2017-11-10",
+    "price" : "48.70",
+    "airline" : "AF"
+  } ]
+}
