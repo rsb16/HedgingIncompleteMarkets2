@@ -3,13 +3,14 @@ import org.apache.commons.math3.stat.StatUtils;
 import org.apache.commons.math3.stat.correlation.Covariance;
 
 import java.io.*;
-import java.util.Random;
+import java.util.*;
 
 /**
  * Created by Dan on 11/05/2017.
  */
 public class OptionPricer {
 
+    Map<Integer, Asset> assets = new HashMap<>();
     private double muCorrelated;
     private double sigmaCorrelated;
     private double muUntraded;
@@ -26,23 +27,38 @@ public class OptionPricer {
     private static double[] NORMS2;
     private static double DT;
     private static double INTEREST = 0.05;
-    private static double STRIKE = 400;
-    private static double RHO = 1;
+    private static double STRIKE = 300;
+    private static double RHO = 0.8;
     private double w;
     private double bec;
     private boolean hedge;
     private double T;
 
-    public OptionPricer(String[] args) {
-        this.muCorrelated = Double.parseDouble(args[0]);
-        this.sigmaCorrelated = Double.parseDouble(args[1]);
-        this.muUntraded = Double.parseDouble(args[2]);
-        this.sigmaUntraded = Double.parseDouble(args[3]);
-        this.startPriceUntraded = Double.parseDouble(args[4]);
-        this.startPriceCorrelated = Double.parseDouble(args[5]);
-        this.numDays = Integer.parseInt(args[6]);
-        this.hedgesPerDay = Integer.parseInt(args[7]);
-        this.hedge = Boolean.parseBoolean(args[8].split("=")[1]);
+    public OptionPricer(String[] args, int n) {
+        Properties prop = new Properties();
+        try {
+            FileInputStream is = new FileInputStream("Resources.properties");
+            prop.load(is);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        for (int i = 0; i < Integer.parseInt(args[1]); i++) {
+            this.assets.put(i, new Asset(
+                    Double.parseDouble(prop.getProperty("correlated_mu_" + i)),
+                    Double.parseDouble(prop.getProperty("correlated_vol_" + i)),
+                    Double.parseDouble(prop.getProperty("start_price_correlated_" + i))
+            ));
+        }
+        //this.muCorrelated = Double.parseDouble(prop.getProperty("correlated_mu"));
+        //this.sigmaCorrelated = Double.parseDouble(prop.getProperty("correlated_vol"));
+        this.muUntraded = Double.parseDouble(prop.getProperty("untraded_mu"));
+        this.sigmaUntraded = Double.parseDouble(prop.getProperty("untraded_vol"));
+        this.startPriceUntraded = Double.parseDouble(prop.getProperty("start_price_untraded"));
+        //this.startPriceCorrelated = Double.parseDouble(prop.getProperty("start_price_correlated"));
+        this.numDays = Integer.parseInt(prop.getProperty("num_days"));
+        this.hedgesPerDay = Integer.parseInt(prop.getProperty("hedges_per_day"));
         this.T = this.numDays / 365.0;
         DT = (this.T) / (this.numDays * this.hedgesPerDay);
         NORMS1 = new double[this.hedgesPerDay * this.numDays];
@@ -50,13 +66,13 @@ public class OptionPricer {
         try {
             makeRandomNormals();
         } catch (Exception e) {
-
+            System.out.println("here");
         }
         setUntradedPrices();
         setCorrelatedPrices();
         this.bec = bec();
         this.w = this.muUntraded - this.bec*(this.muCorrelated - INTEREST);
-        printPrices();
+        //printPrices(n);
     }
 
     public double calculateOptionPrice(int day) {
@@ -82,7 +98,7 @@ public class OptionPricer {
         //Option value : 15
         //option expires at 180 with strike 200.
         //profit = 15 + 0 = 15.
-        return calculateOptionPrice(0) - Math.max(0, this.untradedPrices[this.untradedPrices.length - 1] - STRIKE);
+        return calculateOptionPrice(0) * Math.exp(INTEREST * this.T) - Math.max(0, this.untradedPrices[this.untradedPrices.length - 1] - STRIKE);
     }
 
     public double calculateProfitSingleHedge() {
@@ -96,7 +112,7 @@ public class OptionPricer {
         double G = this.calculateOptionPrice(0);
         double riskFree = G - phi;
         double moneyFromCorrelated = (phi / this.correlatedPrices[0]) * this.correlatedPrices[this.correlatedPrices.length - 1];
-        return -1 * Math.max(0, this.untradedPrices[this.untradedPrices.length - 1] - STRIKE) + moneyFromCorrelated + riskFree * Math.exp(INTEREST * (numDays / 365.0));
+        return -1 * Math.max(0, this.untradedPrices[this.untradedPrices.length - 1] - STRIKE) + moneyFromCorrelated + riskFree * Math.exp(INTEREST * this.T);
     }
 
     public double calculateProfitMultiHedge() {
@@ -130,14 +146,11 @@ public class OptionPricer {
             costOfBorrowing += (riskFree * INTEREST * DT);
             phiPrev = phi;
         }
+//        System.out.println("V: " + calculateOptionPrice(0));
 //        System.out.println("payout: " + -Math.max(0, this.untradedPrices[this.untradedPrices.length - 1] - STRIKE));
-//        System.out.println("Xe: " + this.untradedPrices[this.untradedPrices.length - 1]);
-//        System.out.println("Xc: " + this.correlatedPrices[this.correlatedPrices.length - 1]);
-//        System.out.println("riskFree: " + riskFree);
-//        System.out.println("phiPrev: " + phiPrev);
-//        System.out.println("G: " + G);
 //        System.out.println("prof: " + profitFromCorrelated);
 //        System.out.println("Cost: " + costOfBorrowing);
+//        System.out.println("G: " + G);
         double profit = - (1 * Math.max(0, this.untradedPrices[this.untradedPrices.length - 1] - STRIKE)) + profitFromCorrelated + calculateOptionPrice(0) + costOfBorrowing;
 //        System.out.println(profit);
 //        System.out.println();
@@ -146,7 +159,7 @@ public class OptionPricer {
 
     private void makeRandomNormals() {
         Random random = new Random();
-            for (int i = 0; i < this.numDays * this.numDays; i ++) {
+            for (int i = 0; i < this.numDays * this.hedgesPerDay; i ++) {
                 NORMS1[i] = random.nextGaussian();
                 NORMS2[i] = RHO * NORMS1[i] + Math.sqrt(1 - RHO) * random.nextGaussian();
             }
@@ -177,15 +190,18 @@ public class OptionPricer {
         }
     }
 
-    public void printPrices() {
+    public void printPrices(int n) {
         try {
-            PrintWriter writer = new PrintWriter("prices.txt", "UTF-8");
+            PrintWriter untradedWriter = new PrintWriter("untraded-prices" + n + ".txt", "UTF-8");
+            PrintWriter correlatedWriter = new PrintWriter("correlated-prices" + n + ".txt", "UTF-8");
             for (int i = 0; i < this.numDays * this.hedgesPerDay; i++) {
-                writer.print(i + " ");
-                writer.print(this.untradedPrices[i] + " ");
-                writer.println(this.correlatedPrices[i]);
+                untradedWriter.print(i + " ");
+                untradedWriter.println(this.untradedPrices[i] + " ");
+                correlatedWriter.print(i + " ");
+                correlatedWriter.println(this.correlatedPrices[i] + " ");
             }
-            writer.close();
+            untradedWriter.close();
+            correlatedWriter.close();
         } catch (Exception e) {
             System.out.println("Error writing to file.");
         }
