@@ -10,9 +10,8 @@ import java.util.*;
  */
 public class OptionPricer {
 
-    public Asset untraded;
-    public ArrayList<Asset> assets = new ArrayList<>();
-    private double[][] covariance_matrix;
+    private Asset untraded;
+    ArrayList<Asset> assets = new ArrayList<>();
     private int numDays;
     private int hedgesPerDay;
     private double[] dzc;
@@ -56,8 +55,6 @@ public class OptionPricer {
                     Double.parseDouble(prop.getProperty("RHO_" + i))
             ));
         }
-        this.covariance_matrix = new double[this.assets.size()][this.assets.size()];
-        calculateCovarianceMatrix();
         this.untraded.setWeightAll(1);
         setWeightsAll(); // should be replaced
         this.bec = bec();
@@ -66,6 +63,10 @@ public class OptionPricer {
     }
 
     public double calculateOptionPrice(int day) {
+        //double d1 = (Math.log(this.untradedPrices[day] / STRIKE) + (this.w + (0.5) * this.sigmaUntraded * this.sigmaUntraded) * (this.T - day * DT))
+        //        / (this.sigmaUntraded * Math.sqrt(this.T - day * DT));
+        //double d2 = (Math.log(this.untradedPrices[day] / STRIKE) + (this.w - (0.5) * this.sigmaUntraded * this.sigmaUntraded) * (this.T - day * DT))
+        //        / (this.sigmaUntraded * Math.sqrt(this.T - day * DT));
         double d1 = (Math.log(this.untraded.getPrices()[day] / STRIKE) + (this.w + (0.5) * this.untraded.getVolatility() * this.untraded.getVolatility()) * (this.T - day * DT))
                   / (this.untraded.getVolatility() * Math.sqrt(this.T - day * DT));
         double d2 = (Math.log(this.untraded.getPrices()[day] / STRIKE) + (this.w - (0.5) * this.untraded.getVolatility() * this.untraded.getVolatility()) * (this.T - day * DT))
@@ -105,7 +106,9 @@ public class OptionPricer {
         double phi = this.untraded.getPrices()[0] * Math.exp((this.w - INTEREST) * (this.T - 0 * DT)) * norm.cumulativeProbability(d1) * this.bec;
         double G = this.calculateOptionPrice(0);
         double riskFree = G - phi;
+        //double moneyFromCorrelated = (phi / this.correlatedPrices[0]) * this.correlatedPrices[this.correlatedPrices.length - 1];
         double moneyFromCorrelated = (phi / calculatePortfolioValue(0)) * calculatePortfolioValue(this.hedgesPerDay * this.numDays - 1);
+        //return -1 * Math.max(0, this.untradedPrices[this.untradedPrices.length - 1] - STRIKE) + moneyFromCorrelated + riskFree * Math.exp(INTEREST * this.T);
         return -1 * Math.max(0, this.untraded.getPrices()[this.untraded.getPrices().length - 1] - STRIKE) + moneyFromCorrelated + riskFree * Math.exp(INTEREST * this.T);
     }
 
@@ -117,9 +120,6 @@ public class OptionPricer {
         double costOfBorrowing = 0;
         double G = this.calculateOptionPrice(0);
         this.w = this.untraded.getDrift() - this.bec * (this.calculatePortfolioMu(0) - INTEREST);
-        Covariance cov = new Covariance();
-        double[] payouts = new double[this.hedgesPerDay*this.numDays - 1];
-        double[] hedge = new double[this.hedgesPerDay*this.numDays - 1];
         NormalDistribution norm = new NormalDistribution(0, 1);
         double d1 = (Math.log(this.untraded.getPrices()[0] / STRIKE) + (this.w + (0.5) * this.untraded.getVolatility() * this.untraded.getVolatility()) * (this.T - 0 * DT))
                 / (this.untraded.getVolatility() * Math.sqrt(this.T - 0 * DT));
@@ -133,36 +133,27 @@ public class OptionPricer {
             //Get the ith phi.
             double phi = this.untraded.getPrices()[i] * Math.exp((this.w - INTEREST) * (this.T - i * DT)) * norm.cumulativeProbability(d1) * this.bec;
             double dG = ((G - phi) * INTEREST + phi * this.calculatePortfolioMu(i)) * DT + phi * this.calculatePortfolioSigma(i) * this.dzc[i];
-//            System.out.print(this.untraded.getPrices()[i] - this.untraded.getPrices()[i-1] + "\t");
-//            System.out.println(dG);
             riskFree = G - phi;
             G += dG;
             profitFromCorrelated += (((phiPrev / this.calculatePortfolioValue(i - 1)) * this.calculatePortfolioValue(i)) - phiPrev);
-            hedge[i-1] = profitFromCorrelated + calculateOptionPrice(0) + costOfBorrowing;
-            payouts[i-1] = - (1 * Math.max(0, this.untraded.getPrices()[i] - STRIKE));
-            //System.out.println("Hedge{" + (i - 1) + "}: " + (profitFromCorrelated + calculateOptionPrice(0) + costOfBorrowing));
-            double a = StatUtils.variance(Arrays.copyOfRange(payouts, 0, i));
-            double b = StatUtils.variance(Arrays.copyOfRange(hedge, 0, i));
-            double c = - 2*cov.covariance(Arrays.copyOfRange(payouts, 0, i + 1), Arrays.copyOfRange(hedge, 0, i + 1));
-            System.out.println((a + b - c));
             //System.out.println("phi: " + phi);
             //System.out.println("Corr[" + i + "]: " + this.correlatedPrices[i]);
             //System.out.println("phiPrev: " + phiPrev);
             //System.out.println("Corr[" + (i - 1) + "]: " + this.correlatedPrices[i - 1]);
             //System.out.println("Prof: " + (((phiPrev / this.correlatedPrices[i - 1]) * this.correlatedPrices[i]) - phiPrev));
             //System.out.println();
-            //System.out.println("V: " + calculateOptionPrice(i));
+            System.out.println("V: " + calculateOptionPrice(i));
             costOfBorrowing += (riskFree * INTEREST * DT);
             phiPrev = phi;
         }
-//        System.out.println("V: " + calculateOptionPrice(0));
-//        System.out.println("payout: " + -Math.max(0, this.untraded.getPrices()[this.untraded.getPrices().length - 1] - STRIKE));
-//        System.out.println("prof: " + profitFromCorrelated);
-//        System.out.println("Cost: " + costOfBorrowing);
-//        System.out.println("G: " + G);
+        System.out.println("V: " + calculateOptionPrice(0));
+        System.out.println("payout: " + -Math.max(0, this.untraded.getPrices()[this.untraded.getPrices().length - 1] - STRIKE));
+        System.out.println("prof: " + profitFromCorrelated);
+        System.out.println("Cost: " + costOfBorrowing);
+        System.out.println("G: " + G);
         double profit = - (1 * Math.max(0, this.untraded.getPrices()[this.untraded.getPrices().length - 1] - STRIKE)) + profitFromCorrelated + calculateOptionPrice(0) + costOfBorrowing;
-//        System.out.println(profit);
-//        System.out.println();
+        System.out.println(profit);
+        System.out.println();
         return profit;
     }
 
@@ -173,9 +164,9 @@ public class OptionPricer {
             PrintWriter correlatedWriter = new PrintWriter("correlated-prices" + n + ".txt", "UTF-8");
             for (int i = 0; i < this.numDays * this.hedgesPerDay; i++) {
                 untradedWriter.print(i + " ");
-                untradedWriter.println(this.untraded.getPrices()[i] + " ");
+                //untradedWriter.println(this.untradedPrices[i] + " ");
                 correlatedWriter.print(i + " ");
-                correlatedWriter.println(this.untraded.getPrices()[i] + " ");
+                //correlatedWriter.println(this.correlatedPrices[i] + " ");
             }
             untradedWriter.close();
             correlatedWriter.close();
@@ -184,7 +175,6 @@ public class OptionPricer {
         }
 
     }
-
 
     public double bec() {
         this.dze = new double[this.numDays * this.hedgesPerDay];
@@ -212,12 +202,8 @@ public class OptionPricer {
     private double calculatePortfolioSigma(int i) {
         double sigma = 0;
         for (Asset asset : this.assets) {
-            double asset_vol = asset.getVolatility();
-            double asset_w = asset.getWeight(i);
-            sigma += (asset_w * asset_w) * (asset_vol * asset_vol);
-            for (Asset assetb : this.assets) {
-                sigma += asset_vol * assetb.getVolatility() * asset_w * assetb.getWeight(i) * this.covariance_matrix[this.assets.indexOf(asset)][this.assets.indexOf(assetb)];
-            }
+            // don't include the untraded.
+            sigma += asset.getWeight(i) * asset.getVolatility();
         }
         return sigma;
     }
@@ -226,14 +212,14 @@ public class OptionPricer {
         // check it sets to 1 when two assets etc.
         int num_assets = this.assets.size();
         for (Asset asset : this.assets) {
-            asset.setWeightAll(1 / (num_assets));
+            asset.setWeightAll(1 / (num_assets - 1.0));
         }
     }
 
     private void setWeightsAll() {
         // check it sets to 1 when two assets etc.
         for (Asset asset : this.assets) {
-            asset.setWeightAll(1.0 / (double) this.assets.size());
+            asset.setWeightAll(1 / this.assets.size());
         }
     }
 
@@ -247,36 +233,5 @@ public class OptionPricer {
             value += asset.getWeight(i) * asset.getPrices()[i];
         }
         return value;
-    }
-
-    private void calculateCovarianceMatrix() {
-        for (int i = 0; i < this.assets.size(); i ++) {
-            for (int j = 0; j < this.assets.size(); j ++) {
-                this.covariance_matrix[i][j] = calculateCovariance(i,j);
-                //System.out.print(this.covariance_matrix[i][j] + ((j < (this.assets.size() - 1)) ? ",\t" : ""));
-            }
-            //System.out.println();
-        }
-        //System.out.println();
-    }
-
-    private double calculateCovariance(int i, int j) {
-        double[] returns_i = getReturns(this.assets.get(i).getPrices());
-        double[] returns_j = getReturns(this.assets.get(j).getPrices());
-        double average_i = Arrays.stream(returns_i).average().getAsDouble();
-        double average_j = Arrays.stream(returns_j).average().getAsDouble();
-        double covariance = 0;
-        for (int k = 0; k < this.numDays * this.hedgesPerDay; k++) {
-            covariance += (returns_i[k] - average_i) * (returns_j[k] - average_j);
-        }
-        return covariance / (double) this.numDays * this.hedgesPerDay;
-    }
-
-    private double[] getReturns(double[] prices) {
-        double[] returns = new double[prices.length];
-        for (int i = 0; i < prices.length - 1; i++) {
-            returns[i] = Math.log(prices[i] / prices[i + 1]);
-        }
-        return returns;
     }
 }
