@@ -61,7 +61,7 @@ def find_value_incomplete(end_prices_0, end_prices_1, end_prices):
             # print 'vals: ', vals
             # print 'i: ', i
             # print 'adding: ', (vals[0] * temp_0[0] * asset_ds[0] + vals[1] * temp_1[1] * asset_ds[1])
-            untraded[i] = vals[0] * temp_0[0] * asset_ds[0] + vals[1] * temp_1[1] * asset_ds[1]
+            untraded[i] = (vals[0] * temp_0[0] * asset_ds[0] + vals[1] * temp_1[1] * asset_ds[1])
             prices_0[i] = end_prices_0[i] * asset_ds[0]
             prices_1[i] = end_prices_1[i] * asset_ds[1]
         return find_value_incomplete(prices_0, prices_1, untraded)
