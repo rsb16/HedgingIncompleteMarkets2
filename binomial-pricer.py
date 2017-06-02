@@ -106,29 +106,31 @@ def find_value_incomplete(end_prices_assets, end_prices, t):
         return find_value_incomplete(prev_end_prices_assets, prev_end_prices, (t-1))
 
 def calc_incomplete_price(end_prices_assets, end_prices, day):
-    arrays = np.zeros(shape=(num_assets + 1, day + 1))
+    arrays = np.zeros(shape=(num_assets, 2))
     for i in range(num_assets):
         for j in range(2):
             arrays[i][j] = end_prices_assets[i][j]
-    for j in range(2):
-        arrays[num_assets][j] = end_prices[j]
+    # for j in range(2):
+        # arrays[num_assets][j] = end_prices[j]
+    # print("Arrays:")
+    # print(arrays)
+    # print("----")
     perms = list(itertools.product(*arrays))
-    A = np.zeros(shape=(pow(2, num_assets + 1), num_assets))
+    A = np.zeros(shape=(pow(2, num_assets), num_assets))
     for i in range(len(A)):
         for j in range(len(A[i])):
             perm = perms[i]
             A[i][j] = perm[j]
-    b = np.zeros(pow(2, num_assets + 1))
+    b = np.zeros(pow(2, num_assets))
     for i in range(len(b)):
-        b[i] = perms[i][len(perms[i]) - 1]
-
+        b[i] = end_prices[int(i / pow(2, num_assets - 1))]
     vals = np.dot(np.dot(np.linalg.inv(np.dot(np.transpose(A), A)), np.transpose(A)),np.transpose(b))
-    # print ("decisions: ", vals)
+    print ("decisions: ", vals)
     value = 0
     for i in range(len(vals) - 1):
         value += end_prices_assets[i][0] * asset_us[i] * vals[i]
     value += vals[len(vals) - 1] * find_bond_value(day - 1)
-    return value
+    return value * np.exp(INTEREST - 1)
 
 
 set_finals()
