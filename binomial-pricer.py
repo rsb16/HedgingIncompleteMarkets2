@@ -106,7 +106,7 @@ def find_value_incomplete(end_prices_assets, end_prices, t):
         return find_value_incomplete(prev_end_prices_assets, prev_end_prices, (t-1))
 
 def calc_incomplete_price(end_prices_assets, end_prices, day):
-    arrays = np.zeros(shape=(num_assets + 1, day + 1))
+    arrays = np.zeros(shape=(num_assets + 1, 2))
     for i in range(num_assets):
         for j in range(2):
             arrays[i][j] = end_prices_assets[i][j]
