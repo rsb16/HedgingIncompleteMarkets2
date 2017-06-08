@@ -2,18 +2,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
-    "results": {
-      "departure_date": "2017-06-25", 
-      "price": "51.10", 
-      "destination": "BUD", 
-      "airline": "D8"
-    }
-  }, 
-  {
-    "origin": "LON", 
-    "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-08-27", 
       "price": "51.10", 
@@ -24,7 +13,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-08-29", 
       "price": "51.10", 
@@ -35,7 +24,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-09-05", 
       "price": "51.10", 
@@ -46,7 +35,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-09-19", 
       "price": "51.10", 
@@ -57,7 +46,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-09-24", 
       "price": "51.10", 
@@ -68,7 +57,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-09-26", 
       "price": "51.10", 
@@ -79,7 +68,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-10-01", 
       "price": "51.10", 
@@ -90,18 +79,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
-    "results": {
-      "departure_date": "2017-10-03", 
-      "price": "51.10", 
-      "destination": "BUD", 
-      "airline": "D8"
-    }
-  }, 
-  {
-    "origin": "LON", 
-    "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-10-08", 
       "price": "51.10", 
@@ -112,7 +90,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-10-10", 
       "price": "51.10", 
@@ -123,7 +101,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-10-12", 
       "price": "51.10", 
@@ -134,7 +112,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-10-15", 
       "price": "51.10", 
@@ -145,7 +123,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-10-17", 
       "price": "51.10", 
@@ -156,7 +134,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-10-19", 
       "price": "51.10", 
@@ -167,7 +145,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-10-24", 
       "price": "51.10", 
@@ -178,7 +156,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-10-26", 
       "price": "51.10", 
@@ -189,29 +167,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
-    "results": {
-      "departure_date": "2017-08-22", 
-      "price": "52.00", 
-      "destination": "BUD", 
-      "airline": "BE"
-    }
-  }, 
-  {
-    "origin": "LON", 
-    "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
-    "results": {
-      "departure_date": "2017-09-02", 
-      "price": "52.00", 
-      "destination": "BUD", 
-      "airline": "BE"
-    }
-  }, 
-  {
-    "origin": "LON", 
-    "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-09-07", 
       "price": "52.00", 
@@ -222,7 +178,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-09-12", 
       "price": "52.00", 
@@ -233,7 +189,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-09-14", 
       "price": "52.00", 
@@ -244,7 +200,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-09-16", 
       "price": "52.00", 
@@ -255,7 +211,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-09-21", 
       "price": "52.00", 
@@ -266,7 +222,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-09-23", 
       "price": "52.00", 
@@ -277,7 +233,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-09-28", 
       "price": "52.00", 
@@ -288,7 +244,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-09-30", 
       "price": "52.00", 
@@ -299,7 +255,18 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
+    "results": {
+      "departure_date": "2017-10-03", 
+      "price": "52.00", 
+      "destination": "BUD", 
+      "airline": "BE"
+    }
+  }, 
+  {
+    "origin": "LON", 
+    "currency": "GBP", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-10-05", 
       "price": "52.00", 
@@ -310,7 +277,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-10-07", 
       "price": "52.00", 
@@ -321,7 +288,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-10-14", 
       "price": "52.00", 
@@ -332,7 +299,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-10-28", 
       "price": "52.00", 
@@ -343,18 +310,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
-    "results": {
-      "departure_date": "2017-06-13", 
-      "price": "56.10", 
-      "destination": "BUD", 
-      "airline": "D8"
-    }
-  }, 
-  {
-    "origin": "LON", 
-    "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-09-03", 
       "price": "56.10", 
@@ -365,7 +321,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-09-17", 
       "price": "56.10", 
@@ -376,40 +332,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
-    "results": {
-      "departure_date": "2017-06-20", 
-      "price": "66.10", 
-      "destination": "BUD", 
-      "airline": "D8"
-    }
-  }, 
-  {
-    "origin": "LON", 
-    "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
-    "results": {
-      "departure_date": "2017-06-29", 
-      "price": "66.10", 
-      "destination": "BUD", 
-      "airline": "D8"
-    }
-  }, 
-  {
-    "origin": "LON", 
-    "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
-    "results": {
-      "departure_date": "2017-07-11", 
-      "price": "66.10", 
-      "destination": "BUD", 
-      "airline": "D8"
-    }
-  }, 
-  {
-    "origin": "LON", 
-    "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-08-15", 
       "price": "66.10", 
@@ -420,7 +343,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-08-17", 
       "price": "66.10", 
@@ -431,7 +354,18 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
+    "results": {
+      "departure_date": "2017-08-22", 
+      "price": "66.10", 
+      "destination": "BUD", 
+      "airline": "D8"
+    }
+  }, 
+  {
+    "origin": "LON", 
+    "currency": "GBP", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-08-24", 
       "price": "66.10", 
@@ -442,7 +376,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-08-31", 
       "price": "66.10", 
@@ -453,7 +387,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-09-10", 
       "price": "66.10", 
@@ -464,7 +398,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-10-22", 
       "price": "66.10", 
@@ -475,7 +409,18 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
+    "results": {
+      "departure_date": "2017-06-20", 
+      "price": "67.00", 
+      "destination": "BUD", 
+      "airline": "BE"
+    }
+  }, 
+  {
+    "origin": "LON", 
+    "currency": "GBP", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-06-27", 
       "price": "67.00", 
@@ -486,9 +431,9 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
-      "departure_date": "2017-07-04", 
+      "departure_date": "2017-09-02", 
       "price": "67.00", 
       "destination": "BUD", 
       "airline": "BE"
@@ -497,18 +442,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
-    "results": {
-      "departure_date": "2017-07-13", 
-      "price": "67.00", 
-      "destination": "BUD", 
-      "airline": "BE"
-    }
-  }, 
-  {
-    "origin": "LON", 
-    "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-06-18", 
       "price": "76.10", 
@@ -519,9 +453,9 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
-      "departure_date": "2017-07-02", 
+      "departure_date": "2017-07-04", 
       "price": "76.10", 
       "destination": "BUD", 
       "airline": "D8"
@@ -530,7 +464,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-07-18", 
       "price": "76.10", 
@@ -541,9 +475,9 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
-      "departure_date": "2017-07-06", 
+      "departure_date": "2017-06-13", 
       "price": "77.00", 
       "destination": "BUD", 
       "airline": "BE"
@@ -552,18 +486,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
-    "results": {
-      "departure_date": "2017-09-09", 
-      "price": "77.00", 
-      "destination": "BUD", 
-      "airline": "BE"
-    }
-  }, 
-  {
-    "origin": "LON", 
-    "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-10-31", 
       "price": "84.70", 
@@ -574,7 +497,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-11-01", 
       "price": "84.70", 
@@ -585,7 +508,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-11-07", 
       "price": "84.70", 
@@ -596,7 +519,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-11-08", 
       "price": "84.70", 
@@ -607,7 +530,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-11-14", 
       "price": "84.70", 
@@ -618,7 +541,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-11-15", 
       "price": "84.70", 
@@ -629,7 +552,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-11-21", 
       "price": "84.70", 
@@ -640,7 +563,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-11-22", 
       "price": "84.70", 
@@ -651,7 +574,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-11-28", 
       "price": "84.70", 
@@ -662,7 +585,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-11-29", 
       "price": "84.70", 
@@ -673,7 +596,18 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
+    "results": {
+      "departure_date": "2017-12-05", 
+      "price": "84.70", 
+      "destination": "BUD", 
+      "airline": "BA"
+    }
+  }, 
+  {
+    "origin": "LON", 
+    "currency": "GBP", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-08-14", 
       "price": "84.70", 
@@ -684,7 +618,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-08-16", 
       "price": "84.70", 
@@ -695,7 +629,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-08-20", 
       "price": "84.70", 
@@ -706,7 +640,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-08-23", 
       "price": "84.70", 
@@ -717,7 +651,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-08-26", 
       "price": "84.70", 
@@ -728,7 +662,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-08-28", 
       "price": "84.70", 
@@ -739,7 +673,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-08-30", 
       "price": "84.70", 
@@ -750,7 +684,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-09-04", 
       "price": "84.70", 
@@ -761,7 +695,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-09-06", 
       "price": "84.70", 
@@ -772,7 +706,18 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
+    "results": {
+      "departure_date": "2017-09-09", 
+      "price": "84.70", 
+      "destination": "BUD", 
+      "airline": "BA"
+    }
+  }, 
+  {
+    "origin": "LON", 
+    "currency": "GBP", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-09-11", 
       "price": "84.70", 
@@ -783,7 +728,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-09-13", 
       "price": "84.70", 
@@ -794,7 +739,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-09-18", 
       "price": "84.70", 
@@ -805,7 +750,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-09-20", 
       "price": "84.70", 
@@ -816,7 +761,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-09-25", 
       "price": "84.70", 
@@ -827,7 +772,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-09-27", 
       "price": "84.70", 
@@ -838,7 +783,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-10-02", 
       "price": "84.70", 
@@ -849,7 +794,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-10-04", 
       "price": "84.70", 
@@ -860,7 +805,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-10-11", 
       "price": "84.70", 
@@ -871,7 +816,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-10-16", 
       "price": "84.70", 
@@ -882,7 +827,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-10-18", 
       "price": "84.70", 
@@ -893,7 +838,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-10-21", 
       "price": "84.70", 
@@ -904,7 +849,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-10-23", 
       "price": "84.70", 
@@ -915,7 +860,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-10-25", 
       "price": "84.70", 
@@ -926,7 +871,29 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
+    "results": {
+      "departure_date": "2017-06-25", 
+      "price": "86.10", 
+      "destination": "BUD", 
+      "airline": "D8"
+    }
+  }, 
+  {
+    "origin": "LON", 
+    "currency": "GBP", 
+    "now": "2017-06-08 15:00:04.706634", 
+    "results": {
+      "departure_date": "2017-07-02", 
+      "price": "86.10", 
+      "destination": "BUD", 
+      "airline": "D8"
+    }
+  }, 
+  {
+    "origin": "LON", 
+    "currency": "GBP", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-07-09", 
       "price": "86.10", 
@@ -937,62 +904,18 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
-      "departure_date": "2017-06-17", 
-      "price": "87.00", 
+      "departure_date": "2017-07-11", 
+      "price": "86.10", 
       "destination": "BUD", 
-      "airline": "BE"
+      "airline": "D8"
     }
   }, 
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
-    "results": {
-      "departure_date": "2017-06-22", 
-      "price": "87.00", 
-      "destination": "BUD", 
-      "airline": "BE"
-    }
-  }, 
-  {
-    "origin": "LON", 
-    "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
-    "results": {
-      "departure_date": "2017-07-15", 
-      "price": "87.00", 
-      "destination": "BUD", 
-      "airline": "BE"
-    }
-  }, 
-  {
-    "origin": "LON", 
-    "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
-    "results": {
-      "departure_date": "2017-07-20", 
-      "price": "87.00", 
-      "destination": "BUD", 
-      "airline": "BE"
-    }
-  }, 
-  {
-    "origin": "LON", 
-    "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
-    "results": {
-      "departure_date": "2017-08-03", 
-      "price": "87.00", 
-      "destination": "BUD", 
-      "airline": "BE"
-    }
-  }, 
-  {
-    "origin": "LON", 
-    "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-08-19", 
       "price": "87.00", 
@@ -1003,7 +926,18 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
+    "results": {
+      "departure_date": "2017-06-22", 
+      "price": "96.10", 
+      "destination": "BUD", 
+      "airline": "D8"
+    }
+  }, 
+  {
+    "origin": "LON", 
+    "currency": "GBP", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-07-16", 
       "price": "96.10", 
@@ -1014,7 +948,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-08-08", 
       "price": "96.10", 
@@ -1025,9 +959,9 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
-      "departure_date": "2017-06-08", 
+      "departure_date": "2017-06-17", 
       "price": "102.00", 
       "destination": "BUD", 
       "airline": "BE"
@@ -1036,7 +970,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-06-24", 
       "price": "102.00", 
@@ -1047,7 +981,18 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
+    "results": {
+      "departure_date": "2017-06-29", 
+      "price": "102.00", 
+      "destination": "BUD", 
+      "airline": "BE"
+    }
+  }, 
+  {
+    "origin": "LON", 
+    "currency": "GBP", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-07-01", 
       "price": "102.00", 
@@ -1058,7 +1003,18 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
+    "results": {
+      "departure_date": "2017-07-06", 
+      "price": "102.00", 
+      "destination": "BUD", 
+      "airline": "BE"
+    }
+  }, 
+  {
+    "origin": "LON", 
+    "currency": "GBP", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-07-08", 
       "price": "102.00", 
@@ -1069,7 +1025,40 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
+    "results": {
+      "departure_date": "2017-07-13", 
+      "price": "102.00", 
+      "destination": "BUD", 
+      "airline": "BE"
+    }
+  }, 
+  {
+    "origin": "LON", 
+    "currency": "GBP", 
+    "now": "2017-06-08 15:00:04.706634", 
+    "results": {
+      "departure_date": "2017-07-15", 
+      "price": "102.00", 
+      "destination": "BUD", 
+      "airline": "BE"
+    }
+  }, 
+  {
+    "origin": "LON", 
+    "currency": "GBP", 
+    "now": "2017-06-08 15:00:04.706634", 
+    "results": {
+      "departure_date": "2017-07-20", 
+      "price": "102.00", 
+      "destination": "BUD", 
+      "airline": "BE"
+    }
+  }, 
+  {
+    "origin": "LON", 
+    "currency": "GBP", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-07-25", 
       "price": "102.00", 
@@ -1080,7 +1069,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-07-10", 
       "price": "105.70", 
@@ -1091,7 +1080,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-07-17", 
       "price": "105.70", 
@@ -1102,7 +1091,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-08-07", 
       "price": "105.70", 
@@ -1113,7 +1102,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-08-12", 
       "price": "105.70", 
@@ -1124,7 +1113,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-10-06", 
       "price": "105.70", 
@@ -1135,9 +1124,9 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
-      "departure_date": "2017-08-06", 
+      "departure_date": "2017-07-30", 
       "price": "106.10", 
       "destination": "BUD", 
       "airline": "D8"
@@ -1146,7 +1135,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-07-23", 
       "price": "116.10", 
@@ -1157,9 +1146,9 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
-      "departure_date": "2017-07-30", 
+      "departure_date": "2017-08-06", 
       "price": "116.10", 
       "destination": "BUD", 
       "airline": "D8"
@@ -1168,18 +1157,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
-    "results": {
-      "departure_date": "2017-06-10", 
-      "price": "117.00", 
-      "destination": "BUD", 
-      "airline": "BE"
-    }
-  }, 
-  {
-    "origin": "LON", 
-    "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-08-05", 
       "price": "117.00", 
@@ -1190,7 +1168,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-07-27", 
       "price": "126.10", 
@@ -1201,7 +1179,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-07-14", 
       "price": "131.70", 
@@ -1212,23 +1190,34 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-07-29", 
-      "price": "131.70", 
+      "price": "132.00", 
       "destination": "BUD", 
-      "airline": "BA"
+      "airline": "BE"
     }
   }, 
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.343141", 
+    "now": "2017-06-08 15:00:04.706634", 
+    "results": {
+      "departure_date": "2017-06-11", 
+      "price": "146.10", 
+      "destination": "BUD", 
+      "airline": "D8"
+    }
+  }, 
+  {
+    "origin": "LON", 
+    "currency": "GBP", 
+    "now": "2017-06-08 15:00:04.706634", 
     "results": {
       "departure_date": "2017-07-22", 
-      "price": "152.00", 
+      "price": "171.70", 
       "destination": "BUD", 
-      "airline": "BE"
+      "airline": "BA"
     }
   }
 ]

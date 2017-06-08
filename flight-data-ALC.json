@@ -2,7 +2,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-09-03", 
       "price": "44.10", 
@@ -13,7 +13,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-09-10", 
       "price": "44.10", 
@@ -24,7 +24,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-09-17", 
       "price": "44.10", 
@@ -35,7 +35,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-09-24", 
       "price": "44.10", 
@@ -46,7 +46,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-10-26", 
       "price": "44.10", 
@@ -57,7 +57,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-08-22", 
       "price": "46.10", 
@@ -68,7 +68,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-08-29", 
       "price": "46.10", 
@@ -79,7 +79,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-08-31", 
       "price": "46.10", 
@@ -90,7 +90,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-09-19", 
       "price": "46.10", 
@@ -101,7 +101,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-10-03", 
       "price": "46.10", 
@@ -112,7 +112,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-10-10", 
       "price": "46.10", 
@@ -123,7 +123,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-10-17", 
       "price": "46.10", 
@@ -134,7 +134,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-10-31", 
       "price": "46.10", 
@@ -145,7 +145,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-06-27", 
       "price": "51.10", 
@@ -156,7 +156,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-08-24", 
       "price": "51.10", 
@@ -167,7 +167,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-09-05", 
       "price": "51.10", 
@@ -178,7 +178,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-09-21", 
       "price": "51.10", 
@@ -189,7 +189,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-09-26", 
       "price": "51.10", 
@@ -200,7 +200,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-11-02", 
       "price": "51.10", 
@@ -211,7 +211,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-11-04", 
       "price": "51.10", 
@@ -222,7 +222,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-11-07", 
       "price": "51.10", 
@@ -233,7 +233,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-11-09", 
       "price": "51.10", 
@@ -244,7 +244,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-11-16", 
       "price": "51.10", 
@@ -255,7 +255,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-11-18", 
       "price": "51.10", 
@@ -266,7 +266,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-11-21", 
       "price": "51.10", 
@@ -277,7 +277,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-11-23", 
       "price": "51.10", 
@@ -288,7 +288,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-11-25", 
       "price": "51.10", 
@@ -299,7 +299,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-11-28", 
       "price": "51.10", 
@@ -310,7 +310,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-11-30", 
       "price": "51.10", 
@@ -321,7 +321,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-12-02", 
       "price": "51.10", 
@@ -332,18 +332,29 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
-      "departure_date": "2017-06-25", 
-      "price": "54.10", 
+      "departure_date": "2017-12-05", 
+      "price": "51.10", 
       "destination": "ALC", 
-      "airline": "BA"
+      "airline": "D8"
     }
   }, 
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
+    "results": {
+      "departure_date": "2017-08-18", 
+      "price": "55.62", 
+      "destination": "ALC", 
+      "airline": "MT"
+    }
+  }, 
+  {
+    "origin": "LON", 
+    "currency": "GBP", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-08-25", 
       "price": "55.62", 
@@ -354,18 +365,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
-    "results": {
-      "departure_date": "2017-08-15", 
-      "price": "56.10", 
-      "destination": "ALC", 
-      "airline": "D8"
-    }
-  }, 
-  {
-    "origin": "LON", 
-    "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-08-17", 
       "price": "56.10", 
@@ -376,7 +376,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-09-12", 
       "price": "56.10", 
@@ -387,7 +387,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-09-28", 
       "price": "56.10", 
@@ -398,7 +398,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-10-05", 
       "price": "56.10", 
@@ -409,7 +409,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-10-12", 
       "price": "56.10", 
@@ -420,7 +420,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-10-24", 
       "price": "56.10", 
@@ -431,7 +431,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-10-28", 
       "price": "56.10", 
@@ -442,7 +442,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-11-11", 
       "price": "56.10", 
@@ -453,7 +453,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-11-14", 
       "price": "56.10", 
@@ -464,7 +464,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-10-29", 
       "price": "58.10", 
@@ -475,7 +475,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-11-26", 
       "price": "58.10", 
@@ -486,7 +486,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-12-03", 
       "price": "58.10", 
@@ -497,7 +497,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-06-12", 
       "price": "58.10", 
@@ -508,7 +508,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-06-13", 
       "price": "58.10", 
@@ -519,7 +519,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-06-19", 
       "price": "58.10", 
@@ -530,7 +530,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-06-20", 
       "price": "58.10", 
@@ -541,29 +541,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
-    "results": {
-      "departure_date": "2017-06-26", 
-      "price": "58.10", 
-      "destination": "ALC", 
-      "airline": "BA"
-    }
-  }, 
-  {
-    "origin": "LON", 
-    "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
-    "results": {
-      "departure_date": "2017-07-10", 
-      "price": "58.10", 
-      "destination": "ALC", 
-      "airline": "BA"
-    }
-  }, 
-  {
-    "origin": "LON", 
-    "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-08-30", 
       "price": "58.10", 
@@ -574,7 +552,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-09-02", 
       "price": "58.10", 
@@ -585,7 +563,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-09-06", 
       "price": "58.10", 
@@ -596,7 +574,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-09-13", 
       "price": "58.10", 
@@ -607,7 +585,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-09-20", 
       "price": "58.10", 
@@ -618,7 +596,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-09-27", 
       "price": "58.10", 
@@ -629,7 +607,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-10-02", 
       "price": "58.10", 
@@ -640,7 +618,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-10-06", 
       "price": "58.10", 
@@ -651,7 +629,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-10-13", 
       "price": "58.10", 
@@ -662,7 +640,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-10-16", 
       "price": "58.10", 
@@ -673,7 +651,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-10-25", 
       "price": "58.10", 
@@ -684,7 +662,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-11-10", 
       "price": "64.10", 
@@ -695,7 +673,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-11-12", 
       "price": "64.10", 
@@ -706,7 +684,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-11-17", 
       "price": "64.10", 
@@ -717,7 +695,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-11-19", 
       "price": "64.10", 
@@ -728,9 +706,20 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
-      "departure_date": "2017-08-18", 
+      "departure_date": "2017-11-24", 
+      "price": "64.10", 
+      "destination": "ALC", 
+      "airline": "BA"
+    }
+  }, 
+  {
+    "origin": "LON", 
+    "currency": "GBP", 
+    "now": "2017-06-08 15:00:04.491586", 
+    "results": {
+      "departure_date": "2017-08-15", 
       "price": "65.62", 
       "destination": "ALC", 
       "airline": "MT"
@@ -739,18 +728,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
-    "results": {
-      "departure_date": "2017-06-15", 
-      "price": "66.10", 
-      "destination": "ALC", 
-      "airline": "D8"
-    }
-  }, 
-  {
-    "origin": "LON", 
-    "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-07-06", 
       "price": "66.10", 
@@ -761,7 +739,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-07-11", 
       "price": "66.10", 
@@ -772,7 +750,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-07-18", 
       "price": "66.10", 
@@ -783,7 +761,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-08-08", 
       "price": "66.10", 
@@ -794,7 +772,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-08-10", 
       "price": "66.10", 
@@ -805,7 +783,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-09-07", 
       "price": "66.10", 
@@ -816,7 +794,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-09-14", 
       "price": "66.10", 
@@ -827,7 +805,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-11-03", 
       "price": "68.10", 
@@ -838,7 +816,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-11-05", 
       "price": "68.10", 
@@ -849,7 +827,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-06-21", 
       "price": "68.10", 
@@ -860,7 +838,18 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
+    "results": {
+      "departure_date": "2017-06-26", 
+      "price": "68.10", 
+      "destination": "ALC", 
+      "airline": "BA"
+    }
+  }, 
+  {
+    "origin": "LON", 
+    "currency": "GBP", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-07-03", 
       "price": "68.10", 
@@ -871,7 +860,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-08-13", 
       "price": "68.10", 
@@ -882,7 +871,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-08-20", 
       "price": "68.10", 
@@ -893,7 +882,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-08-27", 
       "price": "68.10", 
@@ -904,7 +893,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-09-01", 
       "price": "68.10", 
@@ -915,7 +904,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-09-04", 
       "price": "68.10", 
@@ -926,7 +915,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-09-11", 
       "price": "68.10", 
@@ -937,7 +926,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-09-18", 
       "price": "68.10", 
@@ -948,7 +937,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-09-22", 
       "price": "68.10", 
@@ -959,7 +948,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-09-25", 
       "price": "68.10", 
@@ -970,7 +959,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-09-30", 
       "price": "68.10", 
@@ -981,7 +970,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-10-04", 
       "price": "68.10", 
@@ -992,7 +981,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-10-07", 
       "price": "68.10", 
@@ -1003,7 +992,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-10-09", 
       "price": "68.10", 
@@ -1014,7 +1003,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-10-14", 
       "price": "68.10", 
@@ -1025,7 +1014,18 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
+    "results": {
+      "departure_date": "2017-10-18", 
+      "price": "68.10", 
+      "destination": "ALC", 
+      "airline": "BA"
+    }
+  }, 
+  {
+    "origin": "LON", 
+    "currency": "GBP", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-10-27", 
       "price": "68.10", 
@@ -1036,9 +1036,9 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
-      "departure_date": "2017-06-17", 
+      "departure_date": "2017-06-15", 
       "price": "76.10", 
       "destination": "ALC", 
       "airline": "D8"
@@ -1047,18 +1047,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
-    "results": {
-      "departure_date": "2017-06-29", 
-      "price": "76.10", 
-      "destination": "ALC", 
-      "airline": "D8"
-    }
-  }, 
-  {
-    "origin": "LON", 
-    "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-08-01", 
       "price": "76.10", 
@@ -1069,7 +1058,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-08-03", 
       "price": "76.10", 
@@ -1080,10 +1069,10 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
-      "departure_date": "2017-06-08", 
-      "price": "80.10", 
+      "departure_date": "2017-12-04", 
+      "price": "78.10", 
       "destination": "ALC", 
       "airline": "BA"
     }
@@ -1091,7 +1080,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-06-22", 
       "price": "80.10", 
@@ -1102,7 +1091,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-10-30", 
       "price": "80.10", 
@@ -1113,9 +1102,9 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
-      "departure_date": "2017-06-07", 
+      "departure_date": "2017-06-11", 
       "price": "80.10", 
       "destination": "ALC", 
       "airline": "BA"
@@ -1124,18 +1113,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
-    "results": {
-      "departure_date": "2017-06-10", 
-      "price": "80.10", 
-      "destination": "ALC", 
-      "airline": "BA"
-    }
-  }, 
-  {
-    "origin": "LON", 
-    "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-06-14", 
       "price": "80.10", 
@@ -1146,7 +1124,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-06-18", 
       "price": "80.10", 
@@ -1157,7 +1135,18 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
+    "results": {
+      "departure_date": "2017-06-25", 
+      "price": "80.10", 
+      "destination": "ALC", 
+      "airline": "BA"
+    }
+  }, 
+  {
+    "origin": "LON", 
+    "currency": "GBP", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-06-28", 
       "price": "80.10", 
@@ -1168,7 +1157,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-07-02", 
       "price": "80.10", 
@@ -1179,7 +1168,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-07-04", 
       "price": "80.10", 
@@ -1190,7 +1179,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-07-05", 
       "price": "80.10", 
@@ -1201,7 +1190,18 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
+    "results": {
+      "departure_date": "2017-07-10", 
+      "price": "80.10", 
+      "destination": "ALC", 
+      "airline": "BA"
+    }
+  }, 
+  {
+    "origin": "LON", 
+    "currency": "GBP", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-09-16", 
       "price": "80.10", 
@@ -1212,7 +1212,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-09-23", 
       "price": "80.10", 
@@ -1223,7 +1223,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-09-29", 
       "price": "80.10", 
@@ -1234,7 +1234,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-10-01", 
       "price": "80.10", 
@@ -1245,7 +1245,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-10-08", 
       "price": "80.10", 
@@ -1256,7 +1256,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-10-11", 
       "price": "80.10", 
@@ -1267,9 +1267,9 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
-      "departure_date": "2017-10-18", 
+      "departure_date": "2017-10-15", 
       "price": "80.10", 
       "destination": "ALC", 
       "airline": "BA"
@@ -1278,7 +1278,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-10-22", 
       "price": "80.10", 
@@ -1289,29 +1289,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
-    "results": {
-      "departure_date": "2017-07-15", 
-      "price": "82.10", 
-      "destination": "ALC", 
-      "airline": "BA"
-    }
-  }, 
-  {
-    "origin": "LON", 
-    "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
-    "results": {
-      "departure_date": "2017-08-07", 
-      "price": "82.10", 
-      "destination": "ALC", 
-      "airline": "BA"
-    }
-  }, 
-  {
-    "origin": "LON", 
-    "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-08-14", 
       "price": "82.10", 
@@ -1322,7 +1300,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-08-23", 
       "price": "82.10", 
@@ -1333,7 +1311,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-08-28", 
       "price": "82.10", 
@@ -1344,7 +1322,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-07-13", 
       "price": "86.10", 
@@ -1355,7 +1333,18 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
+    "results": {
+      "departure_date": "2017-07-15", 
+      "price": "89.10", 
+      "destination": "ALC", 
+      "airline": "BA"
+    }
+  }, 
+  {
+    "origin": "LON", 
+    "currency": "GBP", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-07-17", 
       "price": "89.10", 
@@ -1366,7 +1355,18 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
+    "results": {
+      "departure_date": "2017-08-07", 
+      "price": "89.10", 
+      "destination": "ALC", 
+      "airline": "BA"
+    }
+  }, 
+  {
+    "origin": "LON", 
+    "currency": "GBP", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-08-26", 
       "price": "89.10", 
@@ -1377,9 +1377,9 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
-      "departure_date": "2017-06-11", 
+      "departure_date": "2017-06-17", 
       "price": "92.10", 
       "destination": "ALC", 
       "airline": "BA"
@@ -1388,7 +1388,18 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
+    "results": {
+      "departure_date": "2017-06-24", 
+      "price": "92.10", 
+      "destination": "ALC", 
+      "airline": "BA"
+    }
+  }, 
+  {
+    "origin": "LON", 
+    "currency": "GBP", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-07-09", 
       "price": "92.10", 
@@ -1399,7 +1410,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-07-12", 
       "price": "92.10", 
@@ -1410,7 +1421,18 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
+    "results": {
+      "departure_date": "2017-09-09", 
+      "price": "92.10", 
+      "destination": "ALC", 
+      "airline": "BA"
+    }
+  }, 
+  {
+    "origin": "LON", 
+    "currency": "GBP", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-09-15", 
       "price": "92.10", 
@@ -1421,9 +1443,9 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
-      "departure_date": "2017-10-15", 
+      "departure_date": "2017-06-29", 
       "price": "92.10", 
       "destination": "ALC", 
       "airline": "BA"
@@ -1432,10 +1454,10 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-08-04", 
-      "price": "99.62", 
+      "price": "92.62", 
       "destination": "ALC", 
       "airline": "MT"
     }
@@ -1443,7 +1465,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-08-11", 
       "price": "99.62", 
@@ -1454,7 +1476,7 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-07-16", 
       "price": "105.10", 
@@ -1465,9 +1487,9 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
-      "departure_date": "2017-06-24", 
+      "departure_date": "2017-06-10", 
       "price": "112.10", 
       "destination": "ALC", 
       "airline": "BA"
@@ -1476,9 +1498,9 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
-      "departure_date": "2017-07-25", 
+      "departure_date": "2017-07-27", 
       "price": "116.10", 
       "destination": "ALC", 
       "airline": "D8"
@@ -1487,7 +1509,18 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
+    "results": {
+      "departure_date": "2017-07-25", 
+      "price": "126.10", 
+      "destination": "ALC", 
+      "airline": "D8"
+    }
+  }, 
+  {
+    "origin": "LON", 
+    "currency": "GBP", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-07-23", 
       "price": "130.10", 
@@ -1498,23 +1531,34 @@
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
-      "departure_date": "2017-07-29", 
-      "price": "136.10", 
+      "departure_date": "2017-07-28", 
+      "price": "130.62", 
       "destination": "ALC", 
-      "airline": "D8"
+      "airline": "MT"
     }
   }, 
   {
     "origin": "LON", 
     "currency": "GBP", 
-    "now": "2017-06-06 15:58:22.129200", 
+    "now": "2017-06-08 15:00:04.491586", 
     "results": {
       "departure_date": "2017-06-16", 
       "price": "144.10", 
       "destination": "ALC", 
       "airline": "BA"
+    }
+  }, 
+  {
+    "origin": "LON", 
+    "currency": "GBP", 
+    "now": "2017-06-08 15:00:04.491586", 
+    "results": {
+      "departure_date": "2017-07-29", 
+      "price": "146.10", 
+      "destination": "ALC", 
+      "airline": "D8"
     }
   }
 ]
