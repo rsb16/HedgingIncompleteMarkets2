@@ -13,20 +13,30 @@ INTEREST = 1 + (ANNUAL_INTEREST / (1.0 / DT))
 start_price = float(sys.argv[5])
 STRIKE = float(sys.argv[6])
 num_assets = 2
+num_trials = 1000
 
 u = np.exp(sigma * np.sqrt(DT))
 d = np.exp((-1) * sigma * np.sqrt(DT))
 end_prices = np.zeros(DTs+1)
 
-start_prices_assets = [5, 3]
-assets_sigma = [0.32, 0.22]
+start_prices_assets = [60, 3]
+assets_sigma = [0.3, 0.25]
+rhos = [0.45, 0.56]
 asset_us = np.zeros(num_assets)
 asset_ds = np.zeros(num_assets)
+norms_0 = np.zeros(num_trials)
+norms_assets = np.zeros(shape=(num_assets, num_trials))
 end_prices_assets = np.zeros(shape=(num_assets, DTs + 1))
 
-print_whole_tree = True
-with_bond = False
+print_whole_tree = False
+with_bond = True
 
+def set_norms():
+    for i in range(num_trials):
+        norms_0[i] = np.random.randn()
+    for i in range(len(norms_assets)):
+        for j in range(len(norms_assets[0])):
+            norms_assets[i][j] = rhos[i] * norms_0[j] + np.sqrt(1 - rhos[i]) * np.random.randn()
 
 def set_us():
     global asset_us
@@ -117,37 +127,35 @@ def find_value_incomplete(end_prices_assets, end_prices, t):
         return find_value_incomplete(prev_end_prices_assets, prev_end_prices, (t-1))
 
 def calc_incomplete_price(end_prices_assets, end_prices, day):
-    arrays = np.zeros(shape=(num_assets + 1, 2))
-    for i in range(num_assets):
-        for j in range(2):
-            arrays[i][j] = end_prices_assets[i][j]
-    for j in range(2):
-        arrays[num_assets][j] = end_prices[j]
-    perms = list(itertools.product(*arrays))
-    A = np.zeros(shape=(pow(2, num_assets + 1), num_assets))
+    set_norms()
+    A = np.zeros(shape=(num_trials, num_assets))
     for i in range(len(A)):
         for j in range(len(A[i])):
-            perm = perms[i]
-            A[i][j] = perm[j]
-    b = np.zeros(pow(2, num_assets + 1))
+            if ((norms_assets[j][i]) > 0):
+                # end_prices_assets = [ass_1[L,H], ass_2[L,H]]
+                A[i][j] = end_prices_assets[j][1]
+            else:
+                A[i][j] = end_prices_assets[j][0]
+    b = np.zeros(num_trials)
     for i in range(len(b)):
-        b[i] = perms[i][len(perms[i]) - 1]
+        if (norms_0[i] > 0):
+            b[i] = end_prices[1]
+        else:
+            b[i] = end_prices[0]
 
     vals = np.dot(np.dot(np.linalg.inv(np.dot(np.transpose(A), A)), np.transpose(A)),np.transpose(b))
-    diff = 0
+    # diff = 0
     value = 0
-    # print ("vals: ", vals)
-    for perm in perms:
-        total = 0
-        for asset in range(len(vals)):
-            total += vals[asset] * perm[asset]
-        diff = max(abs(perm[len(perms[0]) - 1] - total), diff)
-    print ("Diff : " + str(diff))
+    # for perm in perms:
+    #     total = 0
+    #     for asset in range(len(vals)):
+    #         total += vals[asset] * perm[asset]
+    #     diff = max(abs(perm[len(perms[0]) - 1] - total), diff)
     for i in range(len(vals) - 1):
         # print("multiplying: " + str(end_prices_assets[i][0] * asset_us[i]) + " and " + str(vals[i]) + " = " + str(end_prices_assets[i][0] * asset_us[i] * vals[i]))
         value += end_prices_assets[i][0] * asset_us[i] * vals[i]
     if (with_bond):
-        value += vals[len(vals) - 1] * find_bond_value(day - 1)
+        value += vals[len(vals) - 1] * find_bond_value(day)
     else:
         # print("multiplying: " + str(end_prices_assets[len(vals) - 1][0] * asset_us[len(vals) - 1]) + " and " + str(vals[len(vals) - 1]) + " = " + str(end_prices_assets[len(vals) - 1][0] * asset_us[len(vals) - 1] * vals[len(vals) - 1]))
         value += vals[len(vals) - 1] * end_prices_assets[len(vals) - 1][0] * asset_us[len(vals) - 1]
@@ -158,7 +166,7 @@ set_finals()
 set_us()
 set_ds()
 set_finals_assets()
-val = find_value_incomplete(end_prices_assets, end_prices, DTs)
-print (val)
-val = find_value_optimal(end_prices, DTs)
-print (val)
+val_1 = find_value_incomplete(end_prices_assets, end_prices, DTs)
+print (val_1)
+val_2 = find_value_optimal(end_prices, DTs)
+print (val_2)
