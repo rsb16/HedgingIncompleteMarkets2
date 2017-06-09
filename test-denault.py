@@ -6,10 +6,10 @@ INTEREST = 1.015
 STRIKE = 50
 DT = 1.0
 num_days = 1
-num_trials = 10
-start_prices = [50, 60, 1]
-vols = [0.2, 0.3, 0.44]
-rhos = [1, 0.45, 0.22]
+num_trials = 1000000
+start_prices = [50, 60, 10, 10]
+vols = [0.2, 0.3, 0.44, 0.11]
+rhos = [1, 0.69, 0.22, 0.45]
 weights = np.zeros(shape=(len(start_prices) - 1, num_trials))
 norms = np.zeros(shape=(num_trials, len(start_prices)))
 end_prices = np.zeros(shape=(num_trials, len(start_prices)))
@@ -37,7 +37,7 @@ def set_end_prices():
 def set_weights():
     for i in range(len(start_prices) - 1):
         for j in range(num_trials):
-            weights[i][j] = random.randint(-10, 10)
+            weights[i][j] = random.randint(-5, 10)
 
 def triangle(n):
     return n * (n + 1) / 2
@@ -49,17 +49,23 @@ def get_diag(matrix):
     return diag
 
 def get_upper_triang(matrix):
-    ut_indices = np.triu_indices(len(matrix))
-    values = np.zeros(triangle(len(matrix) - 1))
-    for i in range(len(values)):
-        #probably need to test this
-        values[i] = matrix[ut_indices][i + 1]
+    values = []
+    for i in range(len(matrix)):
+        for j in range(len(matrix[0])):
+            if (j > i):
+                values.append(matrix[i][j])
     return values
 
 def get_second_order_terms(x):
-    terms = np.zeros(len(x) - len(start_prices))
+    terms = []
+    for i in range(triangle(len(start_prices) - 2)):
+        terms.append(x[len(start_prices) + i])
+    return terms
+
+def get_second_order_terms_diag(x):
+    terms = np.zeros(len(start_prices) - 1)
     for i in range(len(terms)):
-        terms[i] = x[len(start_prices) + i]
+        terms[i] = x[len(x) - len(start_prices) + 1 + i]
     return terms
 
 def symmetrize(a):
@@ -82,7 +88,6 @@ def regress():
     for i in range(len(A)):
         A[i][0] = 1
         weights_trial = np.zeros(len(start_prices) - 1)
-        upper_triangular_indices = np.triu_indices(len(start_prices) - 2)
         for j in range(len(start_prices) - 1):
             weights_trial[j] = weights[j][i]
             A[i][j + 1] = weights[j][i]
@@ -93,12 +98,16 @@ def regress():
         for j in range(len(higher_order_weights_UT)):
             A[i][len(start_prices) + j] = higher_order_weights_UT[j]
         for j in range(len(higher_order_weights_diag)):
-            A[i][(len(start_prices) - 1 + len(upper_triangular_indices)) + j] = higher_order_weights_diag[j]
+            A[i][- 1 * (len(higher_order_weights_diag)) + j] = higher_order_weights_diag[j]
 
     def loss(x):
+        #print 'x : ', x
+        #print 'H: ', H
+        #print 'c: ', c
         return abs(0.5 * np.dot(x.T, np.dot(H, x))+ np.dot(c, x) + c0)
 
     x = np.dot(np.dot(np.linalg.inv(np.add(np.dot(np.transpose(A), A), EPS)), np.transpose(A)), b)
+    #print 'x: ', x
     c0 = x[0] # get the constant
 
     # get the single order terms
@@ -107,26 +116,33 @@ def regress():
     for i in range(len(single_order_terms)):
         single_order_terms[i] = x[i + 1]
 
+    second_order_terms_diag = get_second_order_terms_diag(x)
+
     second_order_terms = get_second_order_terms(x)
-    print second_order_terms
+
     H = np.zeros(shape=(len(start_prices) - 1, len(start_prices) - 1))
 
     for i in range(len(H)):
         for j in range(len(H[0])):
-            H[i][j]
-    H = np.array([[second_order_terms[1],second_order_terms[0]],[second_order_terms[0], second_order_terms[2]]])
-    print H
+            if (i > j):
+                H[i][j] = H[j][i]
+            elif (i == j):
+                H[i][j] = second_order_terms_diag[i]
+            else:
+                H[i][j] = second_order_terms.pop(0)
+
     c = single_order_terms
-    print c
-
     opt = {'disp':False, 'maxiter':500}
-    x0 = [1,1]
-    res_uncons = optimize.minimize(loss, x0, method='Nelder-Mead',
-                                       options=opt)
+    x0 = np.ones(len(start_prices) - 1)
+    res_uncons = optimize.minimize(loss, x0, method='Nelder-Mead', options=opt)
+    value = 0
+    for i in range(len(res_uncons.x)):
+        value += res_uncons.x[i] * start_prices[i + 1]
+    print value
+    return value
 
-    print (res_uncons)
-
-set_norms()
-set_weights()
-set_end_prices()
-regress()
+for day in range(num_days):
+    set_norms()
+    set_weights()
+    set_end_prices()
+    regress()
