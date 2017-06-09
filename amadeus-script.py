@@ -21,9 +21,11 @@ for dest in dests:
 
     with open('flight-data-{}.json'.format(dest), 'r') as f:
         current_data = json.loads(f.read())
-        current_data = []
+
         base_points = json.loads(urllib2.urlopen(url + query).read())
+
         data_ = copy.deepcopy(base_points)
+
         del data_['results']
         data_['now'] = str(datetime.datetime.now())
         for i in base_points['results']:
