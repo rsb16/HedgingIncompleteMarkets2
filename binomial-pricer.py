@@ -19,9 +19,9 @@ u = np.exp(sigma * np.sqrt(DT))
 d = np.exp((-1) * sigma * np.sqrt(DT))
 end_prices = np.zeros(DTs+1)
 
-start_prices_assets = [60, 3]
-assets_sigma = [0.3, 0.25]
-rhos = [0.45, 0.56]
+start_prices_assets = [53, 61, 1]
+assets_sigma = [0.2, 0.11, 0.3]
+rhos = [0.23, 0.44, 0.66]
 asset_us = np.zeros(num_assets)
 asset_ds = np.zeros(num_assets)
 norms_0 = np.zeros(num_trials)

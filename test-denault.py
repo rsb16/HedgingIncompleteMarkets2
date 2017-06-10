@@ -7,9 +7,9 @@ STRIKE = 50
 DT = 1.0/52.0
 num_days = 10
 num_trials = 10000
-start_prices = [50, 60, 30, 1]
-vols = [0.2, 0.09, 0.17, 0.11]
-rhos = [1, 0.69, 0.22, 0.45]
+start_prices = [50, 34, 20, 1]
+vols = [0.2, 0.29, 0.14, 0.11]
+rhos = [1, 0.45, 0.22, 1]
 num_assets = len(start_prices)
 num_tradeables = len(start_prices) - 1
 weights = np.zeros(shape=(num_tradeables, num_trials))
@@ -51,7 +51,7 @@ def set_end_prices(start_prices):
 def set_weights():
     for i in range(num_tradeables):
         for j in range(num_trials):
-            weights[i][j] = random.randint(-1, 1)
+            weights[i][j] = random.uniform(-5, 5)
 
 def triangle(n):
     return n * (n + 1) / 2
@@ -94,15 +94,6 @@ def regress(prev_prices):
         b[i] = end_prices[i][0] - port
     A = np.zeros(shape=(num_trials, triangle(len(start_prices))))
     EPS = np.zeros(shape=(triangle(len(start_prices)), triangle(len(start_prices))))
-    print "end_prices[0][0]" , end_prices[0][0]
-    print "end_prices[1][0]" , end_prices[1][0]
-    print "end_prices[2][0]" , end_prices[2][0]
-    print "end_prices[3][0]" , end_prices[3][0]
-    print "end_prices[4][0]" , end_prices[4][0]
-    print "end_prices[5][0]" , end_prices[5][0]
-    print "end_prices[6][0]" , end_prices[6][0]
-    print "b: "
-    print b
 
     for i in range(len(EPS)):
         for j in range(len(EPS[0])):
@@ -182,16 +173,12 @@ def get_all_end_prices(start_prices, day):
 values = np.zeros(num_days - 1)
 for day in range(num_days, 1, -1):
     prev_prices = get_all_end_prices(start_prices, day - 1)
-    print prev_prices
     for j in range(len(prev_prices[0])):
         set_norms()
         set_weights()
         if (day == num_days):
             set_end_prices(np.transpose(prev_prices[:,j]))
         else:
-            print "values in else: ", values
             set_end_prices_non_final(np.transpose(prev_prices[:,j]), [values[j], values[j+1]])
-            print "In the else case: ", end_prices
         values[j] = regress(prev_prices[:,j])
-        print values[j]
 print values[0]
