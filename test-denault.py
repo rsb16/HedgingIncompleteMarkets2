@@ -5,10 +5,10 @@ import itertools
 INTEREST = 1.015
 STRIKE = 50
 DT = 1.0
-num_days = 1
+num_days = 3
 num_trials = 10
 start_prices = [50, 60, 30, 1]
-vols = [0.2, 0.3, 0.44, 0.11]
+vols = [0.2, 0.09, 0.17, 0.11]
 rhos = [1, 0.69, 0.22, 0.45]
 num_assets = len(start_prices)
 num_tradeables = len(start_prices) - 1
@@ -32,6 +32,7 @@ def set_end_prices(start_prices):
                 if (norms[i][j] > 0):
                     end_prices[i][j] = start_prices[j] * np.exp(vols[j] * np.sqrt(DT))
                 else:
+                    print "start_prices: ", start_prices
                     end_prices[i][j] = start_prices[j] * np.exp(-1 * vols[j] * np.sqrt(DT))
             end_prices[i][0] = max(end_prices[i][0] - STRIKE, 0)
             end_prices[i][len(end_prices[0]) - 1] = start_prices[len(end_prices[0]) - 1] * np.exp((INTEREST - 1) * DT)
@@ -73,7 +74,7 @@ def get_second_order_terms_diag(x):
 def symmetrize(a):
     return a + a.T - numpy.diag(a.diagonal())
 
-def regress():
+def regress(prev_prices):
     b = np.zeros(num_trials)
     for i in range(len(b)):
         port = 0
@@ -144,25 +145,27 @@ def asset_up(i):
     return np.exp(vols[i] * np.sqrt(DT))
 
 def asset_down(i):
-    return np.exp(vols[i] * np.sqrt(DT))
+    return np.exp(-1 * vols[i] * np.sqrt(DT))
 
 def bond_price():
     return np.exp((INTEREST - 1) * DT)
 
 
-def get_all_end_prices(start_prices):
-    end_prices = np.zeros(shape=(num_assets, pow(2, num_days - 1)))
-    for x in range(num_assets):
-            #once up, once down
-            for j in range(2):
-                for k in range(2):
-                    for i in range(pow(2, num_days - 1)):
-                        end_prices[x][i] = start_prices[x] * pow(asset_up(x), j) * pow(asset_down(x), k)
-    print end_prices
+def get_all_end_prices(start_prices, day):
+    end_prices = np.zeros(shape=(num_assets, day))
+    for asset in range(num_assets):
+        for i in range(day):
+            print "Start prices: ", start_prices
+            end_prices[asset][i] = start_prices[asset] * pow(asset_up(asset), i) * pow(asset_down(asset), day - 1 - i)
+    for i in range(day):
+        end_prices[num_assets - 1][i] = start_prices[num_assets - 1] * pow(bond_price(), day - 1)
+    return end_prices
 
-for day in range(num_days):
-    set_norms()
-    set_weights()
-    end_prices = get_all_end_prices(start_prices)
-    # set_end_prices(start_prices)
-    # regress()
+for day in range(num_days, 1, -1):
+    print "start: ", start_prices
+    start_prices = get_all_end_prices(start_prices, day - 1)
+    for j in range(len(start_prices[0])):
+        set_norms()
+        set_weights()
+        set_end_prices(np.transpose(start_prices[:,j]))
+        regress(start_prices[:,j])
