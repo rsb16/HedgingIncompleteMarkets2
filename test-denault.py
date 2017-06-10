@@ -4,9 +4,9 @@ import random
 import itertools
 INTEREST = 1.015
 STRIKE = 50
-DT = 1.0
-num_days = 3
-num_trials = 10
+DT = 1.0/52.0
+num_days = 10
+num_trials = 10000
 start_prices = [50, 60, 30, 1]
 vols = [0.2, 0.09, 0.17, 0.11]
 rhos = [1, 0.69, 0.22, 0.45]
@@ -15,7 +15,7 @@ num_tradeables = len(start_prices) - 1
 weights = np.zeros(shape=(num_tradeables, num_trials))
 norms = np.zeros(shape=(num_trials, len(start_prices)))
 end_prices = np.zeros(shape=(num_trials, len(start_prices)))
-EPSILON = 1e-6
+EPSILON = 0
 
 def set_norms():
     for i in range(len(norms)):
@@ -25,6 +25,18 @@ def set_norms():
             else:
                 norms[i][j] = rhos[j] * norms[i][0] + np.sqrt(1 - rhos[j]) * np.random.randn()
 
+def set_end_prices_non_final(start_prices, vals):
+    for i in range(len(end_prices)):
+        for j in range(len(end_prices[0]) - 1):
+            if (norms[i][j] > 0):
+                end_prices[i][j] = start_prices[j] * np.exp(vols[j] * np.sqrt(DT))
+            else:
+                end_prices[i][j] = start_prices[j] * np.exp(-1 * vols[j] * np.sqrt(DT))
+            if (norms[i][0] > 0):
+                end_prices[i][0] = vals[0]
+            else:
+                end_prices[i][0] = vals[1]
+        end_prices[i][len(end_prices[0]) - 1] = start_prices[len(end_prices[0]) - 1] * np.exp((INTEREST - 1) * DT)
 
 def set_end_prices(start_prices):
         for i in range(len(end_prices)):
@@ -32,7 +44,6 @@ def set_end_prices(start_prices):
                 if (norms[i][j] > 0):
                     end_prices[i][j] = start_prices[j] * np.exp(vols[j] * np.sqrt(DT))
                 else:
-                    print "start_prices: ", start_prices
                     end_prices[i][j] = start_prices[j] * np.exp(-1 * vols[j] * np.sqrt(DT))
             end_prices[i][0] = max(end_prices[i][0] - STRIKE, 0)
             end_prices[i][len(end_prices[0]) - 1] = start_prices[len(end_prices[0]) - 1] * np.exp((INTEREST - 1) * DT)
@@ -40,7 +51,7 @@ def set_end_prices(start_prices):
 def set_weights():
     for i in range(num_tradeables):
         for j in range(num_trials):
-            weights[i][j] = random.randint(-5, 10)
+            weights[i][j] = random.randint(-1, 1)
 
 def triangle(n):
     return n * (n + 1) / 2
@@ -83,6 +94,15 @@ def regress(prev_prices):
         b[i] = end_prices[i][0] - port
     A = np.zeros(shape=(num_trials, triangle(len(start_prices))))
     EPS = np.zeros(shape=(triangle(len(start_prices)), triangle(len(start_prices))))
+    print "end_prices[0][0]" , end_prices[0][0]
+    print "end_prices[1][0]" , end_prices[1][0]
+    print "end_prices[2][0]" , end_prices[2][0]
+    print "end_prices[3][0]" , end_prices[3][0]
+    print "end_prices[4][0]" , end_prices[4][0]
+    print "end_prices[5][0]" , end_prices[5][0]
+    print "end_prices[6][0]" , end_prices[6][0]
+    print "b: "
+    print b
 
     for i in range(len(EPS)):
         for j in range(len(EPS[0])):
@@ -137,8 +157,7 @@ def regress(prev_prices):
     res_uncons = optimize.minimize(loss, x0, method='Nelder-Mead', options=opt)
     value = 0
     for i in range(len(res_uncons.x)):
-        value += res_uncons.x[i] * start_prices[i + 1]
-    print value
+        value += res_uncons.x[i] * prev_prices[i + 1]
     return value
 
 def asset_up(i):
@@ -155,17 +174,24 @@ def get_all_end_prices(start_prices, day):
     end_prices = np.zeros(shape=(num_assets, day))
     for asset in range(num_assets):
         for i in range(day):
-            print "Start prices: ", start_prices
             end_prices[asset][i] = start_prices[asset] * pow(asset_up(asset), i) * pow(asset_down(asset), day - 1 - i)
     for i in range(day):
         end_prices[num_assets - 1][i] = start_prices[num_assets - 1] * pow(bond_price(), day - 1)
     return end_prices
 
+values = np.zeros(num_days - 1)
 for day in range(num_days, 1, -1):
-    print "start: ", start_prices
-    start_prices = get_all_end_prices(start_prices, day - 1)
-    for j in range(len(start_prices[0])):
+    prev_prices = get_all_end_prices(start_prices, day - 1)
+    print prev_prices
+    for j in range(len(prev_prices[0])):
         set_norms()
         set_weights()
-        set_end_prices(np.transpose(start_prices[:,j]))
-        regress(start_prices[:,j])
+        if (day == num_days):
+            set_end_prices(np.transpose(prev_prices[:,j]))
+        else:
+            print "values in else: ", values
+            set_end_prices_non_final(np.transpose(prev_prices[:,j]), [values[j], values[j+1]])
+            print "In the else case: ", end_prices
+        values[j] = regress(prev_prices[:,j])
+        print values[j]
+print values[0]
