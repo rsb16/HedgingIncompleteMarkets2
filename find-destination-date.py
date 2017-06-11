@@ -5,7 +5,7 @@ import sys
 destination = unicode(sys.argv[1])
 date = unicode(sys.argv[2])
 
-with open('flight-data-{}-test.json'.format(destination), 'r') as f:
+with open('flight-data-{}.json'.format(destination), 'r') as f:
     current_data = json.loads(f.read())
 
 filtered_data = filter(
