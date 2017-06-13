@@ -4,7 +4,7 @@ from test_denault import get_all_weights, calculate
 from binomial_pricer import get_weights, calc
 
 INTEREST = 1.015
-STRIKE = 0
+STRIKE = 100
 DT = 1.0/365.0
 num_days = 10
 num_trials = 1
@@ -75,7 +75,7 @@ def get_weights_for_day_and_position(day, count):
 #   simulate a price path for each asset - done.
 def sim():
     all_profits = 0
-    n = 100
+    n = 1
 
     for i in range(n):
         set_untraded_norms()
@@ -102,7 +102,6 @@ def sim():
             for j in range(len(start_prices) - 1):
                 profit_day += weights_prev[j] * (prices[j + 1][k] - prices[j + 1][k - 1])
             total_prof += profit_day
-        # print total_prof
         # print max(prices[0][num_days - 1] - STRIKE, 0)
         # sell the stock we have
         ws = get_weights_for_day_and_position(num_days - 1, (num_days - (count_curr) - 1))
@@ -111,7 +110,7 @@ def sim():
             port += ws[j] * prices[j + 1][num_days - 1]
         all_profits += (total_prof + port - max(prices[0][num_days - 1] - STRIKE, 0))
     #   work out final profit and loss
-    print "E(X): ", all_profits / n
+    print all_profits / n
 
 option_val = calculate()
 weights = get_all_weights()

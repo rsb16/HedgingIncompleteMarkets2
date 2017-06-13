@@ -3,9 +3,9 @@ from scipy import optimize
 import random
 import itertools
 INTEREST = 1.015
-STRIKE = 0
+STRIKE = 100
 DT = 1.0/365.0
-num_days = 50
+num_days = 10
 num_trials = 10000
 start_prices = [50, 34, 20, 1]
 vols = [0.2, 0.29, 0.14, 0.11]
@@ -149,7 +149,7 @@ def regress(prev_prices):
 
     c = single_order_terms
     opt = {'disp':False, 'maxiter':500}
-    x0 = np.ones(num_tradeables)
+    x0 = np.zeros(num_tradeables)
     res_uncons = optimize.minimize(loss, x0, method='Nelder-Mead', options=opt)
     value = 0
     all_weights.append(res_uncons.x)

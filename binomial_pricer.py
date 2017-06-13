@@ -11,9 +11,9 @@ ANNUAL_INTEREST = 0.015#(float(sys.argv[4]))
 # INTEREST over the period DT.
 INTEREST = 1 + (ANNUAL_INTEREST / (1.0 / DT))
 start_price = 50#float(sys.argv[5])
-STRIKE = 0#float(sys.argv[6])
+STRIKE = 100#float(sys.argv[6])
 num_assets = 3
-num_trials = 1000
+num_trials = 10000
 
 u = np.exp(sigma * np.sqrt(DT))
 d = np.exp((-1) * sigma * np.sqrt(DT))
@@ -173,6 +173,4 @@ def calc():
     set_ds()
     set_finals_assets()
     val_1 = find_value_incomplete(end_prices_assets, end_prices, DTs)
-    print (val_1)
     val_2 = find_value_optimal(end_prices, DTs)
-    print (val_2)
