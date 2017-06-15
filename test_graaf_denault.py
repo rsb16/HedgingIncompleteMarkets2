@@ -4,8 +4,8 @@ from test_denault import get_all_weights, calculate
 from binomial_pricer import get_weights, calc
 
 INTEREST = 1.015
-STRIKE = 100
-DT = 1.0/365.0
+STRIKE = 50
+DT = 1.0/52.0
 num_days = 10
 num_trials = 1
 start_prices = [50, 34, 20, 1]
